@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="=width-device-width, initial-scale-1.0">
+    <style>
+       .back {
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url(final.jpg);
+        background-size: 100% 100%; /* Ensures the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center center; /* Keeps the image centered */
+        animation-name: backdiv;
+        animation-duration: 3500ms;
+        animation-iteration-count: infinite;
+        }
+
+
+
+        .heart {
+            position: absolute;
+            margin: auto;
+            top: 170px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: red;
+            height: 150px;
+            width: 150px;
+            transform: rotate(-45deg);
+            animation-name: beat;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+        }
+
+        .heart:after {
+            background-color: red;
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 0;
+            left: 80px;
+        }
+
+        .heart:before {
+            background-color: red;
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: -80px;
+            left: 0;
+        }
+
+        @keyframes backdiv {
+            50% {
+                background-image: url(photo1.png);
+            }
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+            50% {
+                transform: scale(0.6) rotate(-45deg);
+            }
+        }
+
+        .bday {
+            display: none; /* Hidden initially */
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            font-size: 15px;
+            font-family: 'Great Vibes', cursive;
+            font-weight: 600;
+            color: #0e2804;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #eed9c4;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .envelope {
+            position: relative;
+            width: 50%;
+            height: 60px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto;
+            top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        /* Top Arrow */
+        .arrow-top {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid red; /* Arrow color */
+            position: absolute;
+            top: 50px; /* Adjust to position the arrow above the envelope */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+            .emoji-left {
+                position: absolute;
+                left: -50px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 40px; /* Adjust size of the emoji */
+            }
+
+            /* Right Emoji */
+            .emoji-right {
+                position: absolute;
+                right: -50px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 40px; /* Adjust size of the emoji */
+            }
+
+        button {
+            background-color: #FFAAAA;
+            background-image: linear-gradient(145deg, #FFC0CB, #FF69B4);
+            display: block; 
+            margin: 20px auto; 
+            padding: 10px 20px; 
+            color: white; 
+            border: none;
+            margin-top: 130%;
+            font-family: 'Dancing Scripts', cursive;
+            font-size: 20px;
+            border-radius: 25px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+        transform: scale(1.1); /* Grows slightly on hover */
+        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+        button span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+
+        a {
+            color: black;
+            font-weight: 20px;
+            text-decoration: none;
+        }
+
+        .elements {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Stack the elements vertically */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <title>Mi Amor ❤️</title>
+</head>
+<body>
+    <div class="back">
+        <div class="elements">
+            <div class="envelope" onclick="revealMessage()">
+                
+                <div class="emoji-left">💌</div>
+                <div class="emoji-right">💌</div>
+
+                <div class="bday" id="birthdayMessage"> 
+                    Hi My Love! ❤️
+                    <br>As much as I want to celebrate every monthsary together with you,
+                    <br>but distance keeps coming in between 🥺
+                    <br>Don't worry anyway, even the distance can't compare how much I love you palangga.
+                    <br>I love you so much love that I can't stop longing for you palangga 🥺❤️
+                    <br>These wprds may be cringe for others, but these are from the bottom of my heart.
+                    <br>I love you in every breathe I take lang and I love you in every beat of my heart 𖹭
+                    <br>I love you in every minute of the day and I love you so much, Mi Amor. ❤️😙
+                    <br>I can still remember how I met you, how cutie you are langga and still, you're becoming
+                    <br>even more beautiful and charming over time my love. Our 7 months together have been
+                    <br>a wonderful journey, and I'm eager to continue it, even from a distance langga.
+                    <br>I love you my love, so much ❤️ To more days, weeks, months and soon years with you my love!
+                    <br>I MISS YOU BIG TIMEEEE! 🥺🥺
+                </div>
+            </div>
+            <div class="heart"></div>
+            <footer>
+                <div class="boton">
+                    <button><a href="index2.html"><span> Beautiful flowers awaits your touch langga. <br>Will you click this button and make it bloom? 💐</span></a></button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function revealMessage() {
+            const message = document.getElementById('birthdayMessage');
+            message.style.display = message.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
